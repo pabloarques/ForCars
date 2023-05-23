@@ -5,4 +5,8 @@
     <string name="title_notifications">Notifications</string>
     <string name="tv_filter">Filtra el coche que quieras</string>
     <string name="content_description">Content description</string>
+    <string name="precio_contado">Precio al contado</string>
+    <string name="precio_ejemplo">20.000€</string>
+    <string name="modelo_ejemplo">Alfa Romeo Giulia Veloce 2.2 JTDM 210CV</string>
+    <string name="detalles_ejemplo">Barcelona | Diesel | 2022 | 60.000 km</string>
 </resources>
