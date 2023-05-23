@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/ivPrecioContado"
+        android:id="@+id/tvPrecioContado"
         style="@style/TextDefault"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
         app:layout_constraintTop_toBottomOf="@id/ivCar" />
 
     <TextView
-        android:id="@+id/ivPrecio"
+        android:id="@+id/tvPrecio"
         style="@style/TextPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,10 +37,10 @@
         android:layout_marginBottom="@dimen/margin_default_16dp"
         android:text="@string/precio_ejemplo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivPrecioContado" />
+        app:layout_constraintTop_toBottomOf="@id/tvPrecioContado" />
 
     <TextView
-        android:id="@+id/ivModelo"
+        android:id="@+id/tvModelo"
         style="@style/TextBlackDefault"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,10 +48,10 @@
         android:layout_marginEnd="@dimen/margin_default_16dp"
         android:text="@string/modelo_ejemplo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivPrecio" />
+        app:layout_constraintTop_toBottomOf="@id/tvPrecio" />
 
     <TextView
-        android:id="@+id/ivDetalles"
+        android:id="@+id/tvDetalles"
         style="@style/TextDefault"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -60,7 +60,7 @@
         android:layout_marginBottom="@dimen/margin_default_16dp"
         android:text="@string/detalles_ejemplo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivModelo" />
+        app:layout_constraintTop_toBottomOf="@id/tvModelo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
