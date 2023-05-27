@@ -39,7 +39,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_default_16dp"
             android:layout_marginEnd="@dimen/margin_default_16dp"
-            android:layout_marginBottom="@dimen/margin_default_16dp"
             android:text="@string/precio_ejemplo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvPrecioContado" />
