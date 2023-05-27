@@ -16,7 +16,7 @@ class CarsAdapter : RecyclerView.Adapter<CarsAdapter.CarsViewHolder>() {
         RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("SetTextI18n")
         fun bind(car: Cars) {
-            binding.tvPrecio.text = car.price
+            binding.tvPrecio.text = car.price.toString()
             binding.tvModelo.text = car.marca + " " + car.modelo + " " + car.motor + " " + car.cv
             binding.tvDetalles.text = car.ubicacion + " " + car.combustible + " " + car.kilometros
         }
