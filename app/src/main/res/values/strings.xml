@@ -9,4 +9,6 @@
     <string name="precio_ejemplo">20.000€</string>
     <string name="modelo_ejemplo">Alfa Romeo Giulia Veloce 2.2 JTDM 210CV</string>
     <string name="detalles_ejemplo">Barcelona | Diesel | 2022 | 60.000 km</string>
+    <string name="nombre_usuario">Nombre de usuario</string>
+    <string name="hola">Hola,</string>
 </resources>

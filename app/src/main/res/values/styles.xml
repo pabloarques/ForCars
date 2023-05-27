@@ -9,13 +9,13 @@
 
     <style name="TextBlackDefault">
         <item name="android:textColor">@color/md_theme_light_secondary</item>
-        <item name="android:textSize">17sp</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:fontFamily">@font/numero</item>
     </style>
 
     <style name="TextDefault">
         <item name="android:textColor">@color/md_theme_light_onSurfaceVariant</item>
-        <item name="android:textSize">10sp</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:fontFamily">@font/numero</item>
     </style>
 
