@@ -6,7 +6,6 @@ import retrofit2.Response
 import retrofit2.http.GET
 
 interface CarsApi {
-
     @GET("/api/collections/cars/records")
-    suspend fun getCars(): Response<CarsResponse>
+    suspend fun getCars(): Call<Response<CarsResponse>>
 }

@@ -1,6 +1,7 @@
 package com.example.forcars.entity
 
 data class Cars(
+    val id: Int,
     val marca: String,
     val modelo: String,
     val combustible: String,

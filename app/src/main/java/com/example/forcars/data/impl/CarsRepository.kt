@@ -11,10 +11,10 @@ class CarsRepository @Inject constructor(private val carsApi: CarsApi) {
 
     suspend fun getCars(): Flow<ResultType<CarsResponse>> = flow {
         try {
-            val response = carsApi.getCars()
+            val response = carsApi.getCars().execute()
             if (response.isSuccessful) {
                 response.body()?.let {
-                    emit(ResultType.Success(it.toCars()))
+                    emit(ResultType.Success(it.body()!!))
                 }
             } else {
                 val msg = when (response.code()) {
