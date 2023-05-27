@@ -2,14 +2,14 @@ package com.example.forcars.data.impl
 
 import com.example.forcars.data.ResultType
 import com.example.forcars.data.ws.CarsApi
-import com.example.forcars.di.module.model.response.CarsResponse
+import com.example.forcars.entity.Cars
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class CarsRepository @Inject constructor(private val carsApi: CarsApi) {
 
-    suspend fun getCars(): Flow<ResultType<CarsResponse>> = flow {
+    suspend fun getCars(): Flow<ResultType<List<Cars>>> = flow {
         try {
             val response = carsApi.getCars()
             if (response.isSuccessful) {

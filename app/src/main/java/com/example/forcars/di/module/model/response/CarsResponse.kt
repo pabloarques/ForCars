@@ -10,11 +10,5 @@ data class CarsResponse(
     @SerializedName("totalPages") val totalPages: Int,
     @SerializedName("items") val items: List<Cars>
 ) {
-    fun toCars(): CarsResponse = CarsResponse(
-        page = page,
-        perPage = perPage,
-        totalItems = totalItems,
-        totalPages = totalPages,
-        items = items
-    )
+    fun toCars(): List<Cars> = items
 }

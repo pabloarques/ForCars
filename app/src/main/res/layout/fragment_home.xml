@@ -48,10 +48,11 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvHome"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_margin="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cardView"
-        tools:listitem="@layout/item_cars_view"/>
+        tools:listitem="@layout/item_cars_view" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
