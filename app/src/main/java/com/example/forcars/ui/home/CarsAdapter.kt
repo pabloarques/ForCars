@@ -7,13 +7,20 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.forcars.databinding.ItemCarsViewBinding
 import com.example.forcars.entity.Cars
+import com.example.forcars.ui.common.OnItemClickListener
 
 class CarsAdapter : RecyclerView.Adapter<CarsAdapter.CarsViewHolder>() {
 
     private val cars: MutableList<Cars> = mutableListOf()
+    private var itemClickListener: OnItemClickListener? = null
 
     inner class CarsViewHolder(private val binding: ItemCarsViewBinding) :
         RecyclerView.ViewHolder(binding.root) {
+        init {
+            binding.root.setOnClickListener {
+                itemClickListener?.onItemClick(cars[adapterPosition])
+            }
+        }
         @SuppressLint("SetTextI18n")
         fun bind(car: Cars) {
             binding.tvPrecio.text = car.price.toString() + " €"
@@ -53,6 +60,10 @@ class CarsAdapter : RecyclerView.Adapter<CarsAdapter.CarsViewHolder>() {
 
         override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean =
             oldList[oldItemPosition] == newList[newItemPosition]
+    }
+
+    fun setOnItemClickListener(listener: OnItemClickListener) {
+        itemClickListener = listener
     }
 
 }

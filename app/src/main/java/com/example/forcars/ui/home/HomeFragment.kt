@@ -10,6 +10,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.forcars.databinding.FragmentHomeBinding
+import com.example.forcars.entity.Cars
+import com.example.forcars.ui.common.OnItemClickListener
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -40,8 +42,14 @@ class HomeFragment : Fragment() {
 
     private fun setupRecyclerView() {
         adapter = CarsAdapter()
-        binding.rvHome.adapter = adapter
         binding.rvHome.layoutManager = LinearLayoutManager(requireContext())
+        adapter.setOnItemClickListener(object : OnItemClickListener {
+            override fun onItemClick(car: Cars) {
+                Log.d("CAR", car.toString())
+            }
+        })
+
+        binding.rvHome.adapter = adapter
     }
 
     private fun observeViewModel() {
