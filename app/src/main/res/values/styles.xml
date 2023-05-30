@@ -19,4 +19,22 @@
         <item name="android:fontFamily">@font/numero</item>
     </style>
 
+    <style name="TextDefaultItems">
+        <item name="android:textColor">@color/md_theme_light_onPrimaryContainer</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/numero</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="TextBlackDefaultDetail">
+        <item name="android:textColor">@color/md_theme_light_secondary</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:fontFamily">@font/numero</item>
+    </style>
+
+    <style name="TextDefaultDetail">
+        <item name="android:textColor">@color/md_theme_light_onSurfaceVariant</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">@font/numero</item>
+    </style>
 </resources>

@@ -5,9 +5,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.forcars.databinding.ItemCarsViewBinding
 import com.example.forcars.entity.Cars
 import com.example.forcars.ui.common.OnItemClickListener
+import com.example.forcars.ui.common.utils.Constants.BASE_URL
 
 class CarsAdapter : RecyclerView.Adapter<CarsAdapter.CarsViewHolder>() {
 
@@ -21,11 +23,18 @@ class CarsAdapter : RecyclerView.Adapter<CarsAdapter.CarsViewHolder>() {
                 itemClickListener?.onItemClick(cars[adapterPosition])
             }
         }
+
         @SuppressLint("SetTextI18n")
         fun bind(car: Cars) {
             binding.tvPrecio.text = car.price.toString() + " €"
-            binding.tvModelo.text = car.marca + " " + car.modelo + " " + car.motor + " " + car.cv + "CV"
-            binding.tvDetalles.text = car.ubicacion + " | " + car.combustible + " | " + car.kilometros + " km"
+            binding.tvModelo.text =
+                car.marca + " " + car.modelo + " " + car.motor + " " + car.cv + "CV"
+            binding.tvDetalles.text =
+                car.ubicacion + " | " + car.combustible + " | " + car.kilometros + " km"
+
+            Glide.with(binding.root)
+                .load(BASE_URL + car.id + "/" + car.image)
+                .into(binding.ivCar)
         }
     }
 

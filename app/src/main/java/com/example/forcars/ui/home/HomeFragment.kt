@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.forcars.databinding.FragmentHomeBinding
 import com.example.forcars.entity.Cars
@@ -45,7 +46,7 @@ class HomeFragment : Fragment() {
         binding.rvHome.layoutManager = LinearLayoutManager(requireContext())
         adapter.setOnItemClickListener(object : OnItemClickListener {
             override fun onItemClick(car: Cars) {
-                Log.d("CAR", car.toString())
+                openDetail(car)
             }
         })
 
@@ -55,6 +56,11 @@ class HomeFragment : Fragment() {
     private fun observeViewModel() {
         lifecycleScope.launch { viewModel.cars.collect { adapter.submitList(it) } }
         lifecycleScope.launch { viewModel.error.collect { Log.e("ERROR", it) } }
+    }
+
+    fun openDetail(car: Cars) {
+        val action = HomeFragmentDirections.actionNavigationHomeToDetailActivity(car)
+        findNavController().navigate(action)
     }
 
     override fun onDestroyView() {
