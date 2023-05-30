@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="32dp">
+
+    <ImageView
+        android:id="@+id/ivCalendar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="35dp"
+        android:contentDescription="@string/content_description"
+        android:src="@drawable/calendar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        style="@style/TextDefaultItems"
+        android:layout_width="78dp"
+        android:layout_height="20dp"
+        app:layout_constraintEnd_toEndOf="@id/ivCalendar"
+        app:layout_constraintStart_toStartOf="@+id/ivCalendar"
+        app:layout_constraintTop_toBottomOf="@id/ivCalendar"
+        tools:text="2015" />
+
+    <ImageView
+        android:id="@+id/ivKm"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/margin_default_70dp"
+        android:contentDescription="@string/content_description"
+        android:src="@drawable/road"
+        app:layout_constraintEnd_toStartOf="@id/ivCombustible"
+        app:layout_constraintStart_toEndOf="@id/ivCalendar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvKm"
+        style="@style/TextDefaultItems"
+        android:layout_width="78dp"
+        android:layout_height="20dp"
+        app:layout_constraintEnd_toEndOf="@id/ivKm"
+        app:layout_constraintStart_toStartOf="@+id/ivKm"
+        app:layout_constraintTop_toBottomOf="@id/ivKm"
+        tools:text="200.000 km" />
+
+    <ImageView
+        android:id="@+id/ivCombustible"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/margin_default_70dp"
+        android:layout_marginEnd="35dp"
+        android:contentDescription="@string/content_description"
+        android:src="@drawable/fuel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivKm"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCombustible"
+        style="@style/TextDefaultItems"
+        android:layout_width="78dp"
+        android:layout_height="20dp"
+        app:layout_constraintEnd_toEndOf="@id/ivCombustible"
+        app:layout_constraintStart_toStartOf="@+id/ivCombustible"
+        app:layout_constraintTop_toBottomOf="@id/ivCombustible"
+        tools:text="Diésel" />
+
+    <ImageView
+        android:id="@+id/ivUbicacion"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="@dimen/margin_default_16dp"
+        android:contentDescription="@string/content_description"
+        android:src="@drawable/location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDate" />
+
+    <TextView
+        android:id="@+id/tvUbicacion"
+        style="@style/TextDefaultItems"
+        android:layout_width="78dp"
+        android:layout_height="20dp"
+        app:layout_constraintEnd_toEndOf="@id/ivUbicacion"
+        app:layout_constraintStart_toStartOf="@+id/ivUbicacion"
+        app:layout_constraintTop_toBottomOf="@id/ivUbicacion"
+        tools:text="Madrid" />
+
+    <ImageView
+        android:id="@+id/ivCv"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/margin_default_70dp"
+        android:contentDescription="@string/content_description"
+        android:src="@drawable/power"
+        app:layout_constraintEnd_toStartOf="@id/ivCambio"
+        app:layout_constraintStart_toEndOf="@id/ivUbicacion"
+        app:layout_constraintTop_toTopOf="@id/ivUbicacion" />
+
+    <TextView
+        android:id="@+id/tvCv"
+        style="@style/TextDefaultItems"
+        android:layout_width="78dp"
+        android:layout_height="20dp"
+        app:layout_constraintEnd_toEndOf="@id/ivCv"
+        app:layout_constraintStart_toStartOf="@+id/ivCv"
+        app:layout_constraintTop_toBottomOf="@id/ivCv"
+        tools:text="69 cv" />
+
+    <ImageView
+        android:id="@+id/ivCambio"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/margin_default_70dp"
+        android:layout_marginEnd="35dp"
+        android:contentDescription="@string/content_description"
+        android:src="@drawable/shift"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivCv"
+        app:layout_constraintTop_toTopOf="@id/ivCv" />
+
+    <TextView
+        android:id="@+id/tvCambio"
+        style="@style/TextDefaultItems"
+        android:layout_width="78dp"
+        android:layout_height="20dp"
+        app:layout_constraintEnd_toEndOf="@id/ivCambio"
+        app:layout_constraintStart_toStartOf="@+id/ivCambio"
+        app:layout_constraintTop_toBottomOf="@id/ivCambio"
+        tools:text="Manual" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
