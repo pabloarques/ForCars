@@ -14,7 +14,8 @@
         android:contentDescription="@string/content_description"
         android:src="@drawable/calendar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/md_theme_light_onTertiaryContainer" />
 
     <TextView
         android:id="@+id/tvDate"
@@ -35,7 +36,8 @@
         android:src="@drawable/road"
         app:layout_constraintEnd_toStartOf="@id/ivCombustible"
         app:layout_constraintStart_toEndOf="@id/ivCalendar"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/md_theme_light_onTertiaryContainer" />
 
     <TextView
         android:id="@+id/tvKm"
@@ -57,7 +59,8 @@
         android:src="@drawable/fuel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/ivKm"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/md_theme_light_onTertiaryContainer" />
 
     <TextView
         android:id="@+id/tvCombustible"
@@ -78,7 +81,8 @@
         android:contentDescription="@string/content_description"
         android:src="@drawable/location"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvDate" />
+        app:layout_constraintTop_toBottomOf="@id/tvDate"
+        app:tint="@color/md_theme_light_onTertiaryContainer" />
 
     <TextView
         android:id="@+id/tvUbicacion"
@@ -99,7 +103,8 @@
         android:src="@drawable/power"
         app:layout_constraintEnd_toStartOf="@id/ivCambio"
         app:layout_constraintStart_toEndOf="@id/ivUbicacion"
-        app:layout_constraintTop_toTopOf="@id/ivUbicacion" />
+        app:layout_constraintTop_toTopOf="@id/ivUbicacion"
+        app:tint="@color/md_theme_light_onTertiaryContainer" />
 
     <TextView
         android:id="@+id/tvCv"
@@ -121,7 +126,8 @@
         android:src="@drawable/shift"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/ivCv"
-        app:layout_constraintTop_toTopOf="@id/ivCv" />
+        app:layout_constraintTop_toTopOf="@id/ivCv"
+        app:tint="@color/md_theme_light_onTertiaryContainer" />
 
     <TextView
         android:id="@+id/tvCambio"
