@@ -1,12 +1,21 @@
 package com.example.forcars.ui.detail
 
+import android.Manifest
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.navigation.navArgs
 import com.bumptech.glide.Glide
 import com.example.forcars.databinding.ActivityDetailBinding
 import com.example.forcars.databinding.DetailCarBinding
+import com.example.forcars.ui.chat.ChatActivity
 import com.example.forcars.ui.common.utils.Constants.BASE_URL
+import com.example.forcars.ui.common.utils.Constants.REQUEST_CALL_PHONE_PERMISSION
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -16,6 +25,7 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var _binding: DetailCarBinding
 
     private val args: DetailActivityArgs by navArgs()
+    private val phoneNumber = "650409866"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +35,7 @@ class DetailActivity : AppCompatActivity() {
         _binding = DetailCarBinding.inflate(layoutInflater, binding.llDetailCar, true)
         backtoHome()
         setupArgs()
+        setupButtons()
     }
 
     private fun backtoHome() {
@@ -32,6 +43,11 @@ class DetailActivity : AppCompatActivity() {
             finish()
         }
     }
+
+    private fun navigateToChat() {
+        startActivity(ChatActivity.create(this))
+    }
+
 
     private fun setupArgs() {
         with(binding) {
@@ -52,5 +68,54 @@ class DetailActivity : AppCompatActivity() {
         Glide.with(this)
             .load(BASE_URL + args.cars.id + "/" + args.cars.image)
             .into(binding.ivPhotoCar)
+    }
+
+    private fun setupButtons() {
+        with(binding) {
+            btnLlamar.setOnClickListener {
+                checkPermision()
+            }
+            btnChat.setOnClickListener {
+                navigateToChat()
+            }
+        }
+    }
+
+    private fun checkPermision() {
+        if (ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.CALL_PHONE
+            ) == PackageManager.PERMISSION_GRANTED
+        ) {
+            callPhoneNumber()
+        } else {
+            // Solicitar el permiso de realizar llamadas
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.CALL_PHONE),
+                REQUEST_CALL_PHONE_PERMISSION
+            )
+        }
+    }
+
+    private fun callPhoneNumber() {
+        val dialIntent = Intent(Intent.ACTION_DIAL)
+        dialIntent.data = Uri.parse("tel: $phoneNumber")
+        startActivity(dialIntent)
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == REQUEST_CALL_PHONE_PERMISSION) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                callPhoneNumber()
+            } else {
+                Toast.makeText(this, "Permiso Denegado", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }

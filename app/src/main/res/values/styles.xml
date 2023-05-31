@@ -27,7 +27,7 @@
     </style>
 
     <style name="TextBlackDefaultDetail">
-        <item name="android:textColor">@color/md_theme_light_secondary</item>
+        <item name="android:textColor">@color/md_theme_light_onBackground</item>
         <item name="android:textSize">22sp</item>
         <item name="android:fontFamily">@font/numero</item>
     </style>
@@ -36,5 +36,12 @@
         <item name="android:textColor">@color/md_theme_light_onSurfaceVariant</item>
         <item name="android:textSize">15sp</item>
         <item name="android:fontFamily">@font/numero</item>
+    </style>
+
+    <style name="ButtonBlueStyle">
+        <item name="android:background">@color/md_theme_light_tertiaryContainer</item>
+        <item name="android:textColor">@color/md_theme_light_onTertiaryContainer</item>
+        <item name="drawableTint">@color/md_theme_light_onTertiaryContainer</item>
+        <item name="cornerRadius">10dp</item>
     </style>
 </resources>
