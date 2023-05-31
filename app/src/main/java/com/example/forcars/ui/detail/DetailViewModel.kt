@@ -14,5 +14,4 @@ class DetailViewModel @Inject constructor() : ViewModel() {
     private val _cars = MutableLiveData<Cars>()
     val cars: LiveData<Cars> get() = _cars
 
-
 }
