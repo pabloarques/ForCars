@@ -16,4 +16,8 @@
     <string name="garantia">Garantía oficial pagada por ForCars\n1 año</string>
     <string name="chat">Chat</string>
     <string name="llamar">Llamar</string>
+    <string name="contactar">Para ponerte en contacto con el dueño del vehículo\nProporciona tu correo y se lo haremos llegar.</string>
+    <string name="enviarmail">Enviar</string>
+    <string name="ejemplodemail">Correo electrónico</string>
+    <string name="invalid_email">Correo inválido</string>
 </resources>
