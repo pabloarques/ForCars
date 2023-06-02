@@ -44,4 +44,16 @@
         <item name="drawableTint">@color/md_theme_light_onTertiaryContainer</item>
         <item name="cornerRadius">10dp</item>
     </style>
+
+    <style name="TextBlackPreset">
+        <item name="android:textColor">@color/md_theme_light_onTertiaryContainer</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/numero</item>
+    </style>
+
+    <style name="TextLabelMedium">
+        <item name="android:textColor">@color/md_theme_light_onTertiaryContainer</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/numero</item>
+    </style>
 </resources>
