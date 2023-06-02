@@ -23,4 +23,5 @@
     <string name="correo_electronico">Correo electrónico</string>
     <string name="modificar_foto">Modificar foto</string>
     <string name="cerrar_sesion">Cerrar Sesión</string>
+    <string name="contraseña">Contraseña</string>
 </resources>
