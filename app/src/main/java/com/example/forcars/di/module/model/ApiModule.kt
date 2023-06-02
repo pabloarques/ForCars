@@ -1,5 +1,7 @@
 package com.example.forcars.di.module.model
 
+import android.content.Context
+import com.example.forcars.data.SharedPreferencesManager
 import com.example.forcars.data.ws.CarsApi
 import dagger.Module
 import dagger.Provides
@@ -36,4 +38,9 @@ class ApiModule {
     @Provides
     fun provideCarsApi(retrofit: Retrofit): CarsApi =
         retrofit.create(CarsApi::class.java)
+
+    @Provides
+    fun provideSharedPreferencesManager(context: Context): SharedPreferencesManager {
+        return SharedPreferencesManager(context)
+    }
 }

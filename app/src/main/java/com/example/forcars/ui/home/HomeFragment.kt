@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.forcars.databinding.FragmentHomeBinding
 import com.example.forcars.entity.Cars
+import com.example.forcars.ui.MainViewModel
 import com.example.forcars.ui.common.OnItemClickListener
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -23,6 +24,9 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val viewModel by viewModels<HomeViewModel>()
+    private val mviewModel by viewModels<MainViewModel>()
+
+
     private lateinit var adapter: CarsAdapter
 
     override fun onCreateView(
@@ -32,13 +36,24 @@ class HomeFragment : Fragment() {
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         setupRecyclerView()
+        setupUser()
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        observeViewModel()
+
         viewModel.getCars()
+        observeViewModel()
+    }
+
+    private fun setupUser() {
+        mviewModel.user.observe(viewLifecycleOwner) { user ->
+            if (user != null) {
+                binding.tvNombreUsuario.text = user.displayName
+            }
+        }
     }
 
     private fun setupRecyclerView() {

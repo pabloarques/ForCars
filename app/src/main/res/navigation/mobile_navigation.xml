@@ -33,5 +33,5 @@
         <argument
             android:name="cars"
             app:argType="com.example.forcars.entity.Cars" />
-    </activity>
+    </activity><action android:id="@+id/action_global_navigation_home" app:destination="@id/navigation_home"/>
 </navigation>
