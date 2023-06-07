@@ -71,7 +71,7 @@
         tools:text="pabloarques@gmail.com" />
 
     <Button
-        android:id="@+id/btnChat"
+        android:id="@+id/btnLogOut"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginTop="@dimen/margin_default_16dp"
