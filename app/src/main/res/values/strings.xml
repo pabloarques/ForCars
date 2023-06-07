@@ -23,4 +23,15 @@
     <string name="correo_electronico">Correo electrónico</string>
     <string name="modificar_foto">Modificar foto</string>
     <string name="cerrar_sesion">Cerrar Sesión</string>
+    <string name="subir_imagen">Subir</string>
+    <string name="borrar_imagen">Borrar</string>
+    <string name="marca">Marca</string>
+    <string name="modelo">Modelo\n</string>
+    <string name="kilometros">Kilómetros</string>
+    <string name="combustible">Combustible</string>
+    <string name="cv">Cv</string>
+    <string name="cambio">Cambio</string>
+    <string name="motor">Motor</string>
+    <string name="añadir_anuncio">Añadir Anuncio</string>
+    <string name="borrar_campos">Borrar Campos</string>
 </resources>
