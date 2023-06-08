@@ -103,6 +103,7 @@
             android:layout_marginTop="@dimen/margin_default_16dp"
             android:background="@drawable/edit_text_background"
             android:hint="@string/cv"
+            android:inputType="number"
             android:minHeight="48dp"
             android:padding="8dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -116,6 +117,7 @@
             android:layout_marginTop="@dimen/margin_default_16dp"
             android:background="@drawable/edit_text_background"
             android:hint="@string/precio_ejemplo"
+            android:inputType="number"
             android:minHeight="48dp"
             android:padding="8dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -148,37 +150,65 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etCambio" />
 
-        <NumberPicker
-            android:id="@+id/npYear"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTelefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default_16dp"
+            android:background="@drawable/edit_text_background"
+            android:hint="@string/telefono_contacto"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:padding="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etMotor" />
 
-        <Button
-            android:id="@+id/btnAñadir"
-            android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etUbicacion"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_default_16dp"
+            android:background="@drawable/edit_text_background"
+            android:hint="@string/ubicacion"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etTelefono" />
+
+        <NumberPicker
+            android:id="@+id/npYear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etUbicacion" />
+
+        <Button
+            android:id="@+id/btnSubirAnuncio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default_16dp"
+            android:layout_marginEnd="@dimen/margin_default_16dp"
             android:drawableLeft="@drawable/baseline_playlist_add_24"
             android:text="@string/añadir_anuncio"
-            android:layout_marginEnd="@dimen/margin_default_16dp"
-            app:layout_constraintEnd_toStartOf="@id/btnBorrar"
+            app:layout_constraintEnd_toStartOf="@id/btnReset"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/npYear"
             tools:ignore="RtlHardcoded" />
 
         <Button
             android:id="@+id/btnReset"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_default_16dp"
             android:backgroundTint="@color/md_theme_light_error"
             android:drawableLeft="@drawable/restore"
             android:text="@string/borrar_campos"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/btnAñadir"
+            app:layout_constraintStart_toEndOf="@id/btnSubirAnuncio"
             app:layout_constraintTop_toBottomOf="@id/npYear"
             tools:ignore="RtlHardcoded" />
 
