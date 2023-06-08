@@ -26,7 +26,7 @@
     <string name="subir_imagen">Subir</string>
     <string name="borrar_imagen">Borrar</string>
     <string name="marca">Marca</string>
-    <string name="modelo">Modelo\n</string>
+    <string name="modelo">Modelo</string>
     <string name="kilometros">Kilómetros</string>
     <string name="combustible">Combustible</string>
     <string name="cv">Cv</string>
@@ -35,4 +35,6 @@
     <string name="añadir_anuncio">Añadir Anuncio</string>
     <string name="borrar_campos">Borrar Campos</string>
     <string name="contraseña">Contraseña</string>
+    <string name="telefono_contacto">Telefono de contacto</string>
+    <string name="ubicacion">Ubicación</string>
 </resources>

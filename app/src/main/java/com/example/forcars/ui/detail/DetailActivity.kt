@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -25,7 +26,6 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var _binding: DetailCarBinding
 
     private val args: DetailActivityArgs by navArgs()
-    private val phoneNumber = "650409866"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,6 +63,7 @@ class DetailActivity : AppCompatActivity() {
             tvUbicacion.text = args.cars.ubicacion
             tvCv.text = buildString { append(args.cars.cv.toString() + " cv") }
             tvCambio.text = args.cars.cambio
+            Log.e("TAG", "setupArgs: " + args.cars.telefono.toString())
         }
 
         Glide.with(this)
@@ -100,7 +101,7 @@ class DetailActivity : AppCompatActivity() {
 
     private fun callPhoneNumber() {
         val dialIntent = Intent(Intent.ACTION_DIAL)
-        dialIntent.data = Uri.parse("tel: $phoneNumber")
+        dialIntent.data = Uri.parse("tel: ${args.cars.telefono}")
         startActivity(dialIntent)
     }
 
