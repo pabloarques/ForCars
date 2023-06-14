@@ -1,7 +1,7 @@
-package com.example.forcars.di.module.model
+package com.example.forcars.module
 
 import android.content.Context
-import com.example.forcars.data.SharedPreferencesManager
+import com.example.forcars.common.SharedPreferencesManager
 import com.example.forcars.data.ws.CarsApi
 import dagger.Module
 import dagger.Provides

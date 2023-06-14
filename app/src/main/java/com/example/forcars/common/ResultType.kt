@@ -1,4 +1,4 @@
-package com.example.forcars.data
+package com.example.forcars.common
 
 sealed class ResultType<T> {
     data class Success<T>(val data: T) : ResultType<T>()

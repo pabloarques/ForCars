@@ -1,6 +1,6 @@
 package com.example.forcars.data.impl
 
-import com.example.forcars.data.ResultType
+import com.example.forcars.common.ResultType
 import com.example.forcars.data.ws.CarsApi
 import com.example.forcars.di.module.model.request.CarsRequest
 import com.example.forcars.entity.Cars

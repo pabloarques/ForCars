@@ -1,6 +1,6 @@
 package com.example.forcars.domain.impl
 
-import com.example.forcars.data.ResultType
+import com.example.forcars.common.ResultType
 import com.example.forcars.data.impl.CarsRepository
 import com.example.forcars.entity.Cars
 import kotlinx.coroutines.flow.Flow

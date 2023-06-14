@@ -2,7 +2,7 @@ package com.example.forcars.ui.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.forcars.data.ResultType
+import com.example.forcars.common.ResultType
 import com.example.forcars.domain.impl.GetCarUseCase
 import com.example.forcars.entity.Cars
 import dagger.hilt.android.lifecycle.HiltViewModel

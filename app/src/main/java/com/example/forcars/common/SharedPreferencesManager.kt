@@ -1,4 +1,4 @@
-package com.example.forcars.data
+package com.example.forcars.common
 
 import android.content.Context
 import android.content.SharedPreferences

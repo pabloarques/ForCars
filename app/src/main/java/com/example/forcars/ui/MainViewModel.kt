@@ -5,7 +5,7 @@ import android.content.Intent
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.forcars.data.SharedPreferencesManager
+import com.example.forcars.common.SharedPreferencesManager
 import com.example.forcars.ui.common.utils.Event
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth

@@ -3,7 +3,7 @@ package com.example.forcars.ui.notifications
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.forcars.data.SharedPreferencesManager
+import com.example.forcars.common.SharedPreferencesManager
 import com.example.forcars.ui.common.utils.Event
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.lifecycle.HiltViewModel
