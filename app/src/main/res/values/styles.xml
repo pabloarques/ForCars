@@ -8,15 +8,52 @@
     </style>
 
     <style name="TextBlackDefault">
-        <item name="android:textColor">@color/md_theme_light_secondary</item>
-        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/md_theme_dark_onTertiary</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:fontFamily">@font/numero</item>
     </style>
 
     <style name="TextDefault">
-        <item name="android:textColor">@color/md_theme_light_onSurfaceVariant</item>
-        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/md_theme_dark_tertiaryContainer</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:fontFamily">@font/numero</item>
     </style>
 
+    <style name="TextDefaultItems">
+        <item name="android:textColor">@color/md_theme_light_onPrimaryContainer</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/numero</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="TextBlackDefaultDetail">
+        <item name="android:textColor">@color/md_theme_light_onBackground</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:fontFamily">@font/numero</item>
+    </style>
+
+    <style name="TextDefaultDetail">
+        <item name="android:textColor">@color/md_theme_light_onSurfaceVariant</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">@font/numero</item>
+    </style>
+
+    <style name="ButtonBlueStyle">
+        <item name="android:background">@color/md_theme_light_tertiaryContainer</item>
+        <item name="android:textColor">@color/md_theme_light_onTertiaryContainer</item>
+        <item name="drawableTint">@color/md_theme_light_onTertiaryContainer</item>
+        <item name="cornerRadius">10dp</item>
+    </style>
+
+    <style name="TextBlackPreset">
+        <item name="android:textColor">@color/md_theme_light_onTertiaryContainer</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/numero</item>
+    </style>
+
+    <style name="TextLabelMedium">
+        <item name="android:textColor">@color/md_theme_light_onTertiaryContainer</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/numero</item>
+    </style>
 </resources>

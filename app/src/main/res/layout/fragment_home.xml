@@ -3,43 +3,81 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/margin_default_16dp"
     tools:context=".ui.home.HomeFragment">
+
+    <ImageView
+        android:id="@+id/ivImagenPerfil"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:contentDescription="@string/content_description"
+        android:src="@drawable/baseline_account_circle_24"
+        app:tint="@color/md_theme_light_onTertiaryContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvHola"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/numero"
+        android:text="@string/hola"
+        android:textColor="@color/md_theme_light_secondary"
+        app:layout_constraintStart_toEndOf="@id/ivImagenPerfil"
+        app:layout_constraintTop_toTopOf="@id/ivImagenPerfil" />
+
+    <TextView
+        android:id="@+id/tvNombreUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/numero"
+        android:text="@string/nombre_usuario"
+        android:textColor="@color/md_theme_light_onBackground"
+        app:layout_constraintStart_toEndOf="@id/ivImagenPerfil"
+        app:layout_constraintTop_toBottomOf="@id/tvHola" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="10dp"
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/ivImagenPerfil">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="8dp">
+            android:background="@color/md_theme_light_secondaryContainer"
+            android:padding="12dp">
 
             <TextView
                 android:id="@+id/tvFilter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/numero"
                 android:text="@string/tv_filter"
+                android:textColor="@color/md_theme_light_onSecondaryContainer"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:id="@+id/ibFilter"
-                android:layout_width="0dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
                 android:contentDescription="@string/content_description"
                 android:minHeight="48dp"
                 android:src="@drawable/ic_filter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -49,9 +87,10 @@
         android:id="@+id/rvHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cardView"
-        tools:listitem="@layout/item_cars_view"/>
+        tools:listitem="@layout/item_cars_view" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
