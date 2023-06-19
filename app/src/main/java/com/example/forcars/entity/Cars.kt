@@ -18,7 +18,8 @@ data class Cars(
     val image: String?,
     val ubicacion: String?,
     val telefono: Int,
-    val email: String?
+    val email: String?,
+    val imageURL: String?
 
 ) : Serializable, Parcelable {
     constructor(parcel: Parcel) : this(
@@ -35,6 +36,7 @@ data class Cars(
         parcel.readString(),
         parcel.readString(),
         parcel.readInt(),
+        parcel.readString(),
         parcel.readString()
     )
 
@@ -53,6 +55,7 @@ data class Cars(
         parcel.writeString(ubicacion)
         parcel.writeInt(telefono)
         parcel.writeString(email)
+        parcel.writeString(imageURL)
     }
 
     override fun describeContents(): Int {

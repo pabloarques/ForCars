@@ -15,5 +15,6 @@ data class CarsRequest(
     @SerializedName("price") val price: Int,
     @SerializedName("kilometros") val kilometros: Int,
     @SerializedName("telefono") val telefono: Int,
-    @SerializedName("correo") val correo: String
+    @SerializedName("correo") val correo: String,
+    @SerializedName("imageURL") val imageURL: String
 )
