@@ -66,9 +66,26 @@ class DetailActivity : AppCompatActivity() {
             Log.e("TAG", "setupArgs: " + args.cars.telefono.toString())
         }
 
-        Glide.with(this)
-            .load(BASE_URL + args.cars.id + "/" + args.cars.image)
-            .into(binding.ivPhotoCar)
+        if (args.cars.marca == "Seat") {
+            Glide.with(this)
+                .load(args.cars.imageURL)
+                .into(binding.ivPhotoCar)
+
+        } else if (args.cars.marca == "Mercedes") {
+            Glide.with(this)
+                .load(args.cars.imageURL)
+                .into(binding.ivPhotoCar)
+
+        } else if (args.cars.marca == "Toyota") {
+            Glide.with(this)
+                .load(args.cars.imageURL)
+                .into(binding.ivPhotoCar)
+
+        } else {
+            Glide.with(this)
+                .load(BASE_URL + args.cars.id + "/" + args.cars.image)
+                .into(binding.ivPhotoCar)
+        }
     }
 
     private fun setupButtons() {

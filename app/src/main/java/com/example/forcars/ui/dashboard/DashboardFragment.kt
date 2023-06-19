@@ -31,6 +31,8 @@ class DashboardFragment : Fragment() {
     private val viewModel by viewModels<DashboardViewModel>()
     private val years = mutableListOf<Int>()
     private var selectedImageUri: Uri? = null
+    private var imageURL = ""
+    private var image = ""
 
     private val pickMedia = registerForActivityResult(ActivityResultContracts.GetContent()) {
         if (it != null) {
@@ -160,7 +162,7 @@ class DashboardFragment : Fragment() {
                 val cambio = etCambio.text.toString()
                 val year = years[npYear.value]
                 val motor = etMotor.text.toString()
-                val image = selectedImageUri?.let { getRealPathFromUri(it) }
+                val image = ""
                 val ubicacion = etUbicacion.text.toString()
                 val telefono = etTelefono.text.toString()
 
@@ -169,8 +171,73 @@ class DashboardFragment : Fragment() {
                 val cvv = viewModel.validateInt(cv)
                 val tlf = viewModel.validateInt(telefono)
 
+                if (spMarca.selectedItem.toString() == "Seat") {
+                    imageURL =
+                        "https://static.motor.es/fotos-noticias/2023/05/seat-ibiza-arona-marina-pack-202394992-1684434086_1_720x440.jpg"
 
-                viewModel.postCar(
+                    viewModel.postCar(
+                        marca,
+                        modelo,
+                        combustible,
+                        cambio,
+                        cvv,
+                        year,
+                        image,
+                        motor,
+                        ubicacion,
+                        pr,
+                        km,
+                        tlf,
+                        "",
+                        imageURL
+                    )
+                }
+
+                if (spMarca.selectedItem.toString() == "Mercedes") {
+
+                    imageURL =
+                        "https://www.km77.com/images/medium/3/0/6/1/mercedes-benz-clase-a-lateral-frontal.363061.jpg"
+                    viewModel.postCar(
+                        marca,
+                        modelo,
+                        combustible,
+                        cambio,
+                        cvv,
+                        year,
+                        image,
+                        motor,
+                        ubicacion,
+                        pr,
+                        km,
+                        tlf,
+                        "",
+                        imageURL
+                    )
+                }
+
+                if (spMarca.selectedItem.toString() == "Toyota") {
+                    imageURL =
+                        "https://static.motor.es/fotos-noticias/2023/02/toyota-grand-highlander-202392897-1675937050_1.jpg"
+
+                    viewModel.postCar(
+                        marca,
+                        modelo,
+                        combustible,
+                        cambio,
+                        cvv,
+                        year,
+                        image,
+                        motor,
+                        ubicacion,
+                        pr,
+                        km,
+                        tlf,
+                        "",
+                        imageURL
+                    )
+                }
+
+                /*viewModel.postCar(
                     marca,
                     modelo,
                     combustible,
@@ -183,8 +250,9 @@ class DashboardFragment : Fragment() {
                     pr,
                     km,
                     tlf,
-                    ""
-                )
+                    "",
+                    imageURL
+                )*/
             }
         }
     }

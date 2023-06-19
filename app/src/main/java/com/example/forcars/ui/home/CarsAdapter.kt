@@ -26,6 +26,7 @@ class CarsAdapter : RecyclerView.Adapter<CarsAdapter.CarsViewHolder>() {
 
         @SuppressLint("SetTextI18n")
         fun bind(car: Cars) {
+
             binding.tvPrecio.text = car.price.toString() + " €"
             binding.tvModelo.text =
                 car.marca + " " + car.modelo + " " + car.motor + " " + car.cv + "CV"
@@ -35,6 +36,12 @@ class CarsAdapter : RecyclerView.Adapter<CarsAdapter.CarsViewHolder>() {
             Glide.with(binding.root)
                 .load(BASE_URL + car.id + "/" + car.image)
                 .into(binding.ivCar)
+
+            if (car.image.isNullOrBlank()){
+                Glide.with(binding.root)
+                    .load(car.imageURL)
+                    .into(binding.ivCar)
+            }
         }
     }
 

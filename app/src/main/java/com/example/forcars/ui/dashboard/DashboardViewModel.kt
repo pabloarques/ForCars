@@ -33,7 +33,8 @@ class DashboardViewModel @Inject constructor(private val postCarUseCase: PostCar
         price: Int,
         kilometros: Int,
         telefono: Int,
-        correo: String
+        correo: String,
+        imageURL: String
     ) {
 
         val car = CarsRequest(
@@ -49,7 +50,8 @@ class DashboardViewModel @Inject constructor(private val postCarUseCase: PostCar
             price,
             kilometros,
             telefono,
-            correo
+            correo,
+            imageURL
         )
 
         viewModelScope.launch {
