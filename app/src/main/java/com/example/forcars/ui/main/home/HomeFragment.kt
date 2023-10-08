@@ -1,4 +1,4 @@
-package com.example.forcars.ui.home
+package com.example.forcars.ui.main.home
 
 import android.os.Bundle
 import android.util.Log

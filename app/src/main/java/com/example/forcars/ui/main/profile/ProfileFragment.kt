@@ -1,4 +1,4 @@
-package com.example.forcars.ui.notifications
+package com.example.forcars.ui.main.profile
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,25 +6,25 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.example.forcars.databinding.FragmentNotificationsBinding
+import com.example.forcars.databinding.FragmentProfileBinding
 import com.example.forcars.ui.MainViewModel
 import com.example.forcars.ui.common.EventObserver
 import com.firebase.ui.auth.AuthUI
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class NotificationsFragment : Fragment() {
+class ProfileFragment : Fragment() {
 
-    private var _binding: FragmentNotificationsBinding? = null
+    private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
-    private val viewModel by viewModels<NotificationsViewModel>()
+    private val viewModel by viewModels<ProfileViewModel>()
     private val mviewModel by viewModels<MainViewModel>()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+        _binding = FragmentProfileBinding.inflate(inflater, container, false)
         return binding.root
     }
 

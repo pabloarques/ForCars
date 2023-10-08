@@ -1,10 +1,10 @@
-package com.example.forcars.ui.dashboard
+package com.example.forcars.ui.main.uploadAd
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.forcars.common.ResultType
-import com.example.forcars.di.module.model.request.CarsRequest
-import com.example.forcars.domain.impl.PostCarUseCase
+import com.example.forcars.data.ws.model.request.CarsRequest
+import com.example.forcars.domain.impl.PostCarUseCaseImpl
 import com.example.forcars.ui.common.utils.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class DashboardViewModel @Inject constructor(private val postCarUseCase: PostCarUseCase) :
+class UploadAdViewModel @Inject constructor(private val postCarUseCaseImpl: PostCarUseCaseImpl) :
     ViewModel() {
 
     private val _uiState = MutableStateFlow<UiState>(UiState.Loading)
@@ -53,7 +53,7 @@ class DashboardViewModel @Inject constructor(private val postCarUseCase: PostCar
         )
 
         viewModelScope.launch {
-            when (val result = postCarUseCase.execute(car).first()) {
+            when (val result = postCarUseCaseImpl.execute(car).first()) {
                 is ResultType.Success -> {
                     _uiState.value = UiState.Success("El anuncio se ha subido correctamente")
                 }

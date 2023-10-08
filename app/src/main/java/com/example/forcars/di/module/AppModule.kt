@@ -1,4 +1,4 @@
-package com.example.forcars.module
+package com.example.forcars.di.module
 
 import android.app.Application
 import android.content.Context

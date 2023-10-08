@@ -1,4 +1,4 @@
-package com.example.forcars.ui.dashboard
+package com.example.forcars.ui.main.uploadAd
 
 import android.content.ContentResolver
 import android.net.Uri
@@ -14,7 +14,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.example.forcars.databinding.FragmentDashboardBinding
+import com.example.forcars.databinding.FragmentUploadAdBinding
 import com.example.forcars.ui.common.utils.Marcas
 import com.example.forcars.ui.common.utils.UiState
 import dagger.hilt.android.AndroidEntryPoint
@@ -23,12 +23,12 @@ import java.io.InputStream
 import java.util.Calendar
 
 @AndroidEntryPoint
-class DashboardFragment : Fragment() {
+class UploadAdFragment : Fragment() {
 
-    private var _binding: FragmentDashboardBinding? = null
+    private var _binding: FragmentUploadAdBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel by viewModels<DashboardViewModel>()
+    private val viewModel by viewModels<UploadAdViewModel>()
     private val years = mutableListOf<Int>()
     private var selectedImageUri: Uri? = null
 
@@ -48,7 +48,7 @@ class DashboardFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentUploadAdBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -209,7 +209,6 @@ class DashboardFragment : Fragment() {
             }
         }
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()

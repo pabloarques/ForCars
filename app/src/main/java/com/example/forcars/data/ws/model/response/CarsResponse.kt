@@ -1,4 +1,4 @@
-package com.example.forcars.di.module.model.response
+package com.example.forcars.data.ws.model.response
 
 import com.example.forcars.entity.Cars
 import com.google.gson.annotations.SerializedName

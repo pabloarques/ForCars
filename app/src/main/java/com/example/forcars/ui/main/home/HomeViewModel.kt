@@ -1,9 +1,9 @@
-package com.example.forcars.ui.home
+package com.example.forcars.ui.main.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.forcars.common.ResultType
-import com.example.forcars.domain.impl.GetCarUseCase
+import com.example.forcars.domain.impl.GetCarUseCaseImpl
 import com.example.forcars.entity.Cars
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(private val getCarUseCase: GetCarUseCase) : ViewModel() {
+class HomeViewModel @Inject constructor(private val getCarUseCaseImpl: GetCarUseCaseImpl) : ViewModel() {
 
     private val _cars = MutableStateFlow<List<Cars>>(emptyList())
     val cars: StateFlow<List<Cars>> = _cars
@@ -22,7 +22,7 @@ class HomeViewModel @Inject constructor(private val getCarUseCase: GetCarUseCase
 
     fun getCars() {
         viewModelScope.launch {
-            getCarUseCase.invoke()
+            getCarUseCaseImpl.invoke()
                 .collect() {
                     when (it) {
                         is ResultType.Success -> {

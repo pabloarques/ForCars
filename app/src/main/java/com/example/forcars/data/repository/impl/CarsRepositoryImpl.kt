@@ -1,17 +1,18 @@
-package com.example.forcars.data.impl
+package com.example.forcars.data.repository.impl
 
+import com.example.forcars.data.repository.CarsRepository
 import com.example.forcars.common.ResultType
 import com.example.forcars.data.ws.CarsApi
-import com.example.forcars.di.module.model.request.CarsRequest
+import com.example.forcars.data.ws.model.request.CarsRequest
 import com.example.forcars.entity.Cars
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-class CarsRepository @Inject constructor(private val carsApi: CarsApi) {
+class CarsRepositoryImpl @Inject constructor(private val carsApi: CarsApi) : CarsRepository {
 
-    suspend fun getCars(): Flow<ResultType<List<Cars>>> = flow {
+    override suspend fun getCars(): Flow<ResultType<List<Cars>>> = flow {
         try {
             val response = carsApi.getCars()
             if (response.isSuccessful) {

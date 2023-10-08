@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.forcars.ui.home.HomeFragment"
+        android:name="com.example.forcars.ui.main.home.HomeFragment"
         tools:layout="@layout/fragment_home">
 
         <action
@@ -17,13 +17,13 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.forcars.ui.dashboard.DashboardFragment"
-        tools:layout="@layout/fragment_dashboard" />
+        android:name="com.example.forcars.ui.main.uploadAd.UploadAdFragment"
+        tools:layout="@layout/fragment_upload_ad" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.forcars.ui.notifications.NotificationsFragment"
-        tools:layout="@layout/fragment_notifications" />
+        android:name="com.example.forcars.ui.main.profile.ProfileFragment"
+        tools:layout="@layout/fragment_profile" />
     <activity
         android:id="@+id/detailActivity"
         android:name="com.example.forcars.ui.detail.DetailActivity"
